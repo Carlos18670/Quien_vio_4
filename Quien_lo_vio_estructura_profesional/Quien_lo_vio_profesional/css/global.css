@@ -5231,3 +5231,27 @@ main,
     }
 }
 
+@media (max-width: 768px) {
+
+    .sidebar-overlay.overlay-visible {
+        pointer-events: auto !important;
+        cursor: pointer;
+    }
+
+    #sidebar-container .sidebar.sidebar-open {
+        pointer-events: auto;
+        z-index: 1002;
+    }
+
+    .sidebar-overlay {
+        pointer-events: none;
+    }
+
+    .menu-toggle {
+        position: relative;
+        z-index: 1003;
+    }
+
+}
+
+
