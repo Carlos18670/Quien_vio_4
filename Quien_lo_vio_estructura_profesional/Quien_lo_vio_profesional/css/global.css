@@ -5081,3 +5081,79 @@ main,
     }
 
 }
+
+/* =====================================
+   MENÚ LATERAL ADAPTABLE A CELULARES
+===================================== */
+
+@media screen and (max-width: 768px) {
+
+    #sidebar-container {
+        width: 0;
+        min-width: 0;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 270px;
+        max-width: 85%;
+        height: 100vh;
+        height: 100dvh;
+        box-sizing: border-box;
+        overflow-y: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+    }
+
+    .sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+
+    /* ENCABEZADO */
+    .sidebar .brand-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* NAVEGACIÓN VERTICAL */
+    .sidebar nav {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .sidebar nav a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* PIE DEL MENÚ */
+    .sidebar .sidebar-footer {
+        margin-top: auto;
+        width: 100%;
+    }
+
+    .sidebar .logout-link {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
