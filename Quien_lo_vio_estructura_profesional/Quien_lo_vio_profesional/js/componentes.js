@@ -1,4 +1,3 @@
-
 import { supabase } from './supabase.js';
 
 const contenedorMenu = document.getElementById("sidebar-container");
@@ -34,10 +33,9 @@ if (contenedorMenu) {
                     alt="Logo de ¿Quién lo vio?"
                     class="brand-logo"
                 >
-               <br>
+
                 <span>
                     <b>¿Quién lo vio?</b>
-                    <br>
                     <small>Sistema Inteligente de Objetos Perdidos</small>
                 </span>
             </a>
@@ -72,7 +70,7 @@ if (contenedorMenu) {
     botonMenu.type = "button";
     botonMenu.className = "menu-toggle";
     botonMenu.id = "menu-toggle";
-    botonMenu.innerHTML = "☰";
+    botonMenu.textContent = "☰";
     botonMenu.setAttribute("aria-label", "Abrir menú");
     botonMenu.setAttribute("aria-expanded", "false");
 
@@ -85,7 +83,7 @@ if (contenedorMenu) {
         contenedorMenu.before(botonMenu);
     }
 
-    // CREAR FONDO OSCURO PARA CELULAR
+    // CREAR FONDO OSCURO
     const overlay = document.createElement("div");
 
     overlay.className = "sidebar-overlay";
@@ -94,9 +92,10 @@ if (contenedorMenu) {
     document.body.appendChild(overlay);
 
     // DETECTAR CELULAR
-    const esMovil = () => window.matchMedia("(max-width: 768px)").matches;
+    const esMovil = () =>
+        window.matchMedia("(max-width: 768px)").matches;
 
-    // ABRIR Y CERRAR MENÚ
+    // ABRIR MENÚ
     function abrirMenu() {
 
         if (esMovil()) {
@@ -104,19 +103,19 @@ if (contenedorMenu) {
             sidebar.classList.add("sidebar-open");
             overlay.classList.add("overlay-visible");
 
+            document.body.classList.add("mobile-menu-open");
+
             botonMenu.setAttribute("aria-expanded", "true");
+            botonMenu.setAttribute("aria-label", "Cerrar menú");
 
         } else {
 
             document.body.classList.toggle("sidebar-collapsed");
 
-            const menuVisible =
+            const visible =
                 !document.body.classList.contains("sidebar-collapsed");
 
-            botonMenu.setAttribute(
-                "aria-expanded",
-                menuVisible ? "true" : "false"
-            );
+            botonMenu.setAttribute("aria-expanded", String(visible));
         }
     }
 
@@ -126,18 +125,35 @@ if (contenedorMenu) {
         sidebar.classList.remove("sidebar-open");
         overlay.classList.remove("overlay-visible");
 
+        document.body.classList.remove("mobile-menu-open");
+
         document.body.classList.remove("sidebar-collapsed");
 
         botonMenu.setAttribute("aria-expanded", "false");
+        botonMenu.setAttribute("aria-label", "Abrir menú");
     }
 
-    // EVENTO DEL BOTÓN
-    botonMenu.addEventListener("click", abrirMenu);
+    // BOTÓN HAMBURGUESA
+    botonMenu.addEventListener("click", () => {
 
-    // CERRAR AL TOCAR FUERA
+        if (esMovil()) {
+
+            if (sidebar.classList.contains("sidebar-open")) {
+                cerrarMenu();
+            } else {
+                abrirMenu();
+            }
+
+        } else {
+            abrirMenu();
+        }
+
+    });
+
+    // CERRAR AL TOCAR EL FONDO
     overlay.addEventListener("click", cerrarMenu);
 
-    // CERRAR AL SELECCIONAR UNA OPCIÓN EN CELULAR
+    // CERRAR AL SELECCIONAR UNA OPCIÓN
     sidebar.querySelectorAll("nav a").forEach(enlace => {
 
         enlace.addEventListener("click", () => {
@@ -150,17 +166,9 @@ if (contenedorMenu) {
 
     });
 
-    // CERRAR CON ESCAPE
-    document.addEventListener("keydown", e => {
-
-        if (e.key === "Escape") {
-            cerrarMenu();
-        }
-
-    });
-
     // CERRAR SESIÓN
-    const botonCerrarSesion = document.getElementById("cerrar-sesion");
+    const botonCerrarSesion =
+        document.getElementById("cerrar-sesion");
 
     botonCerrarSesion.addEventListener("click", async e => {
 
@@ -178,27 +186,31 @@ if (contenedorMenu) {
         }
 
         window.location.href = "login.html";
+    });
+
+    // CERRAR CON ESCAPE
+    document.addEventListener("keydown", e => {
+
+        if (e.key === "Escape") {
+            cerrarMenu();
+        }
 
     });
 
-    // RESTAURAR EL MENÚ SEGÚN EL TAMAÑO DE PANTALLA
+    // ADAPTAR AL CAMBIAR EL TAMAÑO DE PANTALLA
     window.addEventListener("resize", () => {
 
-        if (!esMovil()) {
-            sidebar.classList.remove("sidebar-open");
-            overlay.classList.remove("overlay-visible");
-        } else {
-            document.body.classList.remove("sidebar-collapsed");
-        }
-
-        botonMenu.setAttribute("aria-expanded", "false");
+        cerrarMenu();
 
     });
 
 }
 
 
-// CARGAR FOTO DE PERFIL EN TODAS LAS PÁGINAS
+// =====================================
+// CARGAR FOTO DE PERFIL
+// =====================================
+
 async function cargarFotoPerfil() {
 
     const { data: usuarioData, error: errorUsuario } =
@@ -215,14 +227,18 @@ async function cargarFotoPerfil() {
         .single();
 
     if (error) {
-        console.error("Error al cargar la foto de perfil:", error);
+        console.error(
+            "Error al cargar la foto de perfil:",
+            error
+        );
         return;
     }
 
-    if (!data.foto_perfil) return;
+    if (!data?.foto_perfil) return;
 
-    // BUSCAR AVATARES DE LA BARRA SUPERIOR
-    const avatares = document.querySelectorAll(".topbar .avatar.small");
+    const avatares = document.querySelectorAll(
+        ".topbar .avatar.small"
+    );
 
     avatares.forEach(avatar => {
 
@@ -240,3 +256,4 @@ async function cargarFotoPerfil() {
 }
 
 cargarFotoPerfil();
+
