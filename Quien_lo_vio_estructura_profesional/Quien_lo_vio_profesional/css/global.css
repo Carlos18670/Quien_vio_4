@@ -5255,3 +5255,33 @@ main,
 }
 
 
+/* CORRECCIÓN DE CLICS DEL MENÚ EN CELULARES */
+@media (max-width: 768px) {
+
+    #sidebar-container {
+        position: relative;
+        z-index: 10001 !important;
+    }
+
+    #sidebar-container .sidebar {
+        position: fixed;
+        z-index: 10002 !important;
+        pointer-events: auto !important;
+    }
+
+    #sidebar-container .sidebar nav,
+    #sidebar-container .sidebar nav a,
+    #sidebar-container .sidebar-footer,
+    #sidebar-container .sidebar-footer a {
+        pointer-events: auto !important;
+    }
+
+    .sidebar-overlay.overlay-visible {
+        z-index: 10000 !important;
+    }
+
+    .menu-toggle {
+        z-index: 10003 !important;
+    }
+}
+
