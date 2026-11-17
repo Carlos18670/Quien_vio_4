@@ -5184,3 +5184,50 @@ main,
 
 }
 
+/* FONDO DETRÁS DEL MENÚ */
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* MENÚ POR ENCIMA DEL FONDO */
+.sidebar {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+}
+
+/* CUANDO SE ABRE EL FONDO */
+.sidebar-overlay.overlay-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+@media screen and (max-width: 768px) {
+
+    .sidebar {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        height: 100dvh;
+        z-index: 9999 !important;
+    }
+
+    .sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+
+    .sidebar nav,
+    .sidebar nav a,
+    .sidebar .sidebar-footer,
+    .sidebar .logout-link {
+        pointer-events: auto !important;
+        position: relative;
+        z-index: 10000;
+    }
+}
+
