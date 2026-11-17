@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inicio | ¿Quién lo vio?</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+
+<body class="app-shell">
+
+    <!-- MENÚ LATERAL -->
+    <div id="sidebar-container"></div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main">
+
+        <!-- BARRA SUPERIOR -->
+        <header class="topbar">
+
+            <!-- BUSCADOR -->
+            <div class="topbar-search">
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="search"
+                    placeholder="Buscar por tipo de objeto, marca o lugar..."
+                    aria-label="Buscar objetos"
+                >
+            </div>
+
+            <!-- NOTIFICACIONES Y PERFIL -->
+            <div class="topbar-actions">
+
+                
+<details class="notification">
+
+    <summary title="Notificaciones" aria-label="Abrir notificaciones">
+        <span class="bell-icon">♧</span>
+        <span class="notification-dot"></span>
+        <span id="contador-notificaciones" class="notification-count" hidden>0</span>
+    </summary>
+
+    <div class="notification-menu">
+
+        <div class="notification-header">
+            <h3>Notificaciones</h3>
+            <span class="notification-label">Avisos</span>
+        </div>
+
+        <div id="notificaciones-vacias" class="notification-empty">
+            <span class="notification-empty-icon">♧</span>
+            <p>No tienes notificaciones todavía.</p>
+            <small>Aquí aparecerán los mensajes nuevos.</small>
+        </div>
+
+        <div id="lista-notificaciones"></div>
+
+    </div>
+
+</details>
+
+
+                <!-- PERFIL -->
+                <a
+                    class="avatar small"
+                    href="perfil.html"
+                    title="Mi perfil"
+                    aria-label="Ir a mi perfil"
+                >
+                    👤
+                </a>
+
+            </div>
+
+        </header>
+
+        <!-- CONTENIDO DE INICIO -->
+        <main>
+
+            <!-- BANNER PRINCIPAL -->
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <h1>¿Quién lo vio?</h1>
+
+                    <br>
+
+                    <p class="eyebrow">
+                        SISTEMA INTELIGENTE DE OBJETOS PERDIDOS
+                    </p>
+
+                    <h2>
+                        Ayudamos a que cada objeto vuelva a su dueño.
+                    </h2>
+
+                    <p class="hero-description">
+                        Registra, busca y recupera objetos perdidos y
+                        encontrados de forma fácil y segura.
+                    </p>
+
+                    <!-- BOTONES -->
+                    <div class="actions">
+
+                        <a
+                            class="btn primary"
+                            href="reportar-perdido.html"
+                        >
+                            <span>＋</span>
+                            Reportar objeto perdido
+                        </a>
+
+                        <a
+                            class="btn secondary"
+                            href="reportar-encontrado.html"
+                        >
+                            <span>＋</span>
+                            Reportar objeto encontrado
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- ILUSTRACIÓN -->
+                <div class="hero-illustration">
+                    <div class="hero-icon">🔎</div>
+                </div>
+
+            </section>
+
+            <!-- OBJETOS RECIENTES -->
+            <section class="recent-section">
+
+                <div class="section-title">
+
+                    <h2>Objetos recientes</h2>
+
+                    <a href="mis-reportes.html">
+                        Ver todos →
+                    </a>
+
+                </div>
+
+                <!-- AQUÍ SE CARGARÁN LAS FOTOGRAFÍAS -->
+                <div class="recent-empty" id="objetos-recientes">
+
+                    <p>
+                        Cargando objetos recientes...
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- VENTANA DE DETALLES DEL OBJETO -->
+    <div id="modal-objeto" class="modal-objeto" hidden>
+
+        <div class="modal-contenido">
+
+            <!-- BOTÓN CERRAR -->
+            <button
+                type="button"
+                id="cerrar-modal"
+                class="cerrar-modal"
+                aria-label="Cerrar ventana"
+            >
+                ×
+            </button>
+
+            <!-- FOTOGRAFÍA -->
+            <img
+                id="detalle-imagen"
+                src=""
+                alt="Fotografía del objeto"
+            >
+
+            <!-- INFORMACIÓN GENERAL -->
+            <h2 id="detalle-nombre"></h2>
+
+            <p id="detalle-estado">Objeto perdido</p>
+
+            <div class="detalle-informacion">
+
+                <p>
+                    <strong>Categoría:</strong>
+                    <span id="detalle-categoria"></span>
+                </p>
+
+                <p>
+                    <strong>Color:</strong>
+                    <span id="detalle-color"></span>
+                </p>
+
+                <p>
+                    <strong>Marca:</strong>
+                    <span id="detalle-marca"></span>
+                </p>
+
+                <p>
+                    <strong>Fecha:</strong>
+                    <span id="detalle-fecha"></span>
+                </p>
+
+                <p>
+                    <strong>Hora:</strong>
+                    <span id="detalle-hora"></span>
+                </p>
+
+                <p>
+                    <strong>Lugar:</strong>
+                    <span id="detalle-lugar"></span>
+                </p>
+
+                <p>
+                    <strong>Reportado por:</strong>
+                    <span id="detalle-usuario"></span>
+                </p>
+
+            </div>
+
+            <!-- DESCRIPCIÓN -->
+            <div class="detalle-descripcion">
+
+                <h3>Descripción</h3>
+
+                <p id="detalle-descripcion"></p>
+
+            </div>
+            <div class="acciones-contacto">
+            <button type="button" id="btn-encontre">
+               Encontré este objeto
+            </button>
+
+            <button type="button" id="btn-informacion">
+              Tengo información sobre este objeto
+            </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- COMPONENTE DEL MENÚ -->
+    <script type="module" src="../js/componentes.js"></script>
+
+    <!-- FUNCIONES DE INICIO -->
+    <script type="module" src="../js/pages/inicio.js"></script>
+    <script type="module" src="../js/pages/notificaciones.js"></script>
+
+</body>
+</html>

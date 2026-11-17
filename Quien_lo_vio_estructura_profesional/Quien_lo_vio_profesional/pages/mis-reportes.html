@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis reportes | ¿Quién lo vio?</title>
+  <link rel="stylesheet" href="../css/global.css">
+</head>
+<body class="app-shell">
+
+  <!-- Componente centralizado del menú lateral -->
+  <div id="sidebar-container"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <input placeholder="Buscar por tipo de objeto, marca o lugar...">
+      <a class="avatar small" href="perfil.html">👤</a>
+    </header>
+
+    <main>
+      <div class="page-heading">
+        <p class="eyebrow">TU ACTIVIDAD</p>
+        <h1>Mis reportes</h1>
+        <p>Consulta y administra los objetos que has reportado.</p>
+      </div>
+
+      <div class="toolbar">
+    <input
+        id="buscar-mis-reportes"
+        type="search"
+        placeholder="Buscar en mis reportes"
+    >
+
+    <select id="filtro-reportes">
+        <option value="todos">Todos los reportes</option>
+        <option value="activo">Activos</option>
+        <option value="recuperado">Recuperados</option>
+    </select>
+</div>
+
+<div id="mis-reportes-lista" class="reportes-lista">
+    <p>Cargando tus reportes...</p>
+</div>
+    </main>
+  </div>
+
+  <script type="module" src="../js/componentes.js"></script>
+  <script type="module" src="../js/pages/mis-reportes.js"></script>
+</body>
+</html>

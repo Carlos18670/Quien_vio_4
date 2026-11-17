@@ -1,0 +1,127 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar objeto perdido | ¿Quién lo vio?</title>
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+
+<body class="app-shell">
+
+    <!-- MENÚ LATERAL -->
+    <div id="sidebar-container"></div>
+
+    <div class="main">
+
+        <header class="topbar">
+            <input placeholder="Buscar por tipo de objeto, marca o lugar...">
+            <a class="avatar small" href="perfil.html">👤</a>
+        </header>
+
+        <main>
+
+            <div class="page-heading">
+                <p class="eyebrow">NUEVO REPORTE</p>
+                <h1>Registrar objeto perdido</h1>
+                <p>Completa la información del objeto que deseas recuperar.</p>
+            </div>
+
+            <form class="panel" id="form-perdido">
+
+                <div class="form-grid">
+
+                    <label>Nombre del objeto *
+                        <input
+                            type="text"
+                            name="nombre_objeto"
+                            placeholder="Ej. Mochila escolar"
+                            required
+                        >
+                    </label>
+
+                    <label> Categoría *
+                        <select id="categoria" required>
+                            <option value="">Selecciona una categoría</option>
+                            <option value="Celular">Celular</option>
+                            <option value="Computadora">Computadora</option>
+                            <option value="Mochila">Mochila</option>
+                            <option value="Cartera">Cartera</option>
+                            <option value="Audífonos">Audífonos</option>
+                            <option value="Reloj">Reloj</option>
+                            <option value="Llaves">Llaves</option>
+                            <option value="Documentos">Documentos</option>
+                            <option value="Accesorios">Accesorios</option>
+                            <option value="Ropa">Ropa</option>
+                            <option value="Joyas">Joyas</option>
+                            <option value="Botella o termo">Botella o termo</option>
+                            <option value="Paraguas">Paraguas</option>
+                            <option value="Otros">Otros</option>
+                         </select>
+                    </label>
+
+                    <label>Color
+                        <input name="color" placeholder="Ej. Negro">
+                    </label>
+
+                    <label>Marca
+                        <input name="marca" placeholder="Ej. Samsung, Nike...">
+                    </label>
+
+                    <label>Lugar donde se perdió *
+                        <input
+                            name="lugar_perdida"
+                            required
+                            placeholder="Ej. Biblioteca"
+                        >
+                    </label>
+
+                    <label>Fecha *
+                        <input type="date" name="fecha_perdida" required>
+                    </label>
+
+                    <label>Hora aproximada
+                        <input type="time" name="hora_perdida">
+                    </label>
+
+                    <label class="full">Descripción *
+                        <textarea
+                            name="descripcion"
+                            rows="4"
+                            required
+                            placeholder="Describe sus características..."
+                        ></textarea>
+                    </label>
+
+                    <label class="full">Fotografía *
+                        <input
+                            type="file"
+                            name="fotografia"
+                            accept="image/*"
+                            required
+                        >
+                    </label>
+
+                </div>
+
+                <p class="hint">
+                    No publiques información privada ni detalles que permitan
+                    reclamar falsamente el objeto.
+                </p>
+
+                <button type="submit" class="btn primary full">
+                    Enviar reporte
+                </button>
+
+            </form>
+
+        </main>
+    </div>
+
+
+    <script type="module" src="../js/componentes.js"></script>
+    <script type="module" src="../js/pages/reportar-perdido.js"></script>
+
+</body>
+</html>

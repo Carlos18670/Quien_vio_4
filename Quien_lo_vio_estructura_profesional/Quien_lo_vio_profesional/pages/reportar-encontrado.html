@@ -1,0 +1,151 @@
+
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar objeto encontrado | ¿Quién lo vio?</title>
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+
+<body class="app-shell">
+
+    <div id="sidebar-container"></div>
+
+    <div class="main">
+
+        <header class="topbar">
+            <input placeholder="Buscar por tipo de objeto, marca o lugar...">
+            <a class="avatar small" href="perfil.html">👤</a>
+        </header>
+
+        <main>
+
+            <div class="page-heading">
+                <p class="eyebrow">NUEVO REPORTE</p>
+                <h1>Registrar objeto encontrado</h1>
+                <p>Ayuda a que el objeto pueda regresar con su propietario.</p>
+            </div>
+
+            <form class="panel" id="formulario-encontrado">
+
+                <div class="form-grid">
+
+                    <label>
+                        Nombre del objeto *
+                        <input
+                            type="text"
+                            id="nombre-objeto"
+                            placeholder="Ej. Samsung Galaxy A15"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Categoría *
+                        <select id="categoria" required>
+                            <option value="">Selecciona una categoría</option>
+                            <option value="Celular">Celular</option>
+                            <option value="Computadora">Computadora</option>
+                            <option value="Mochila">Mochila</option>
+                            <option value="Cartera">Cartera</option>
+                            <option value="Audífonos">Audífonos</option>
+                            <option value="Reloj">Reloj</option>
+                            <option value="Llaves">Llaves</option>
+                            <option value="Documentos">Documentos</option>
+                            <option value="Accesorios">Accesorios</option>
+                            <option value="Ropa">Ropa</option>
+                            <option value="Joyas">Joyas</option>
+                            <option value="Botella o termo">Botella o termo</option>
+                            <option value="Paraguas">Paraguas</option>
+                            <option value="Otros">Otros</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Color
+                        <input
+                            type="text"
+                            id="color"
+                            placeholder="Ej. Negro"
+                        >
+                    </label>
+
+                    <label>
+                        Marca
+                        <input
+                            type="text"
+                            id="marca"
+                            placeholder="Ej. Samsung, Nike..."
+                        >
+                    </label>
+
+                    <label>
+                        Lugar donde se encontró *
+                        <input
+                            type="text"
+                            id="lugar-encontrado"
+                            placeholder="Ej. Aula 203"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Fecha *
+                        <input
+                            type="date"
+                            id="fecha-encontrado"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Hora aproximada
+                        <input
+                            type="time"
+                            id="hora-encontrado"
+                        >
+                    </label>
+
+                    <label class="full">
+                        Descripción pública *
+                        <textarea
+                            id="descripcion"
+                            rows="4"
+                            placeholder="Describe cómo es el objeto..."
+                            required
+                        ></textarea>
+                    </label>
+
+                    <label class="full">
+                        Fotografía *
+                        <input
+                            type="file"
+                            id="imagen"
+                            accept="image/*"
+                            required
+                        >
+                    </label>
+
+                </div>
+
+                <p class="hint">
+                    Evita publicar detalles privados que permitan a cualquiera reclamar el objeto.
+                </p>
+
+                <button type="submit" class="btn primary full">
+                    Enviar reporte
+                </button>
+
+            </form>
+
+        </main>
+
+    </div>
+
+    <script type="module" src="../js/componentes.js"></script>
+    <script type="module" src="../js/pages/reportar-encontrado.js"></script>
+
+</body>
+</html>

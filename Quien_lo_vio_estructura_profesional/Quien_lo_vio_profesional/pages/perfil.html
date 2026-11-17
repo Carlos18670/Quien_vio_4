@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi perfil | ¿Quién lo vio?</title>
+  <link rel="stylesheet" href="../css/global.css">
+</head>
+<body class="app-shell">
+
+  <!-- Componente centralizado del menú lateral -->
+  <div id="sidebar-container"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <input placeholder="Buscar por tipo de objeto, marca o lugar...">
+      <a class="avatar small" href="perfil.html">👤</a>
+    </header>
+
+    <main>
+      <div class="page-heading">
+    <p class="eyebrow">CUENTA PERSONAL</p>
+    <h1>Mi perfil</h1>
+    <p>Administra tu información y preferencias.</p>
+</div>
+
+<div class="profile">
+    <div class="profile-card">
+
+        <p class="eyebrow">CUENTA PERSONAL</p>
+
+        <div class="avatar">
+            <img id="foto-perfil-actual"
+                 src=""
+                 alt="Foto de perfil"
+                 hidden>
+            <span id="icono-perfil">👤</span>
+        </div>
+
+        <h2 id="nombre-perfil">Usuario</h2>
+
+        <p class="muted" id="correo-perfil">
+            correo@ejemplo.com
+        </p>
+
+    </div>
+</div>
+
+        <form class="panel" id="form-perfil">
+    <h2>Información personal</h2>
+
+    <label>Foto de perfil
+        <input type="file" id="foto-perfil" accept="image/*">
+    </label>
+
+    <label>Nombre completo
+        <input type="text" id="nombre-completo" required>
+    </label>
+
+    <label>Correo electrónico
+        <input type="email" id="correo-electronico" disabled>
+    </label>
+
+    <label>Teléfono de contacto
+        <input type="tel" id="telefono" placeholder="Opcional">
+    </label>
+
+    <label>Ubicación general
+        <input type="text" id="ubicacion" placeholder="Ej. Colón, Panamá">
+    </label>
+
+    <button type="submit" class="btn primary">Guardar cambios</button>
+
+    <hr>
+
+   <a href="javascript:void(0)" id="cerrar-sesion" class="btn danger">
+    Cerrar sesión
+    </a>
+
+    </form>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="../js/componentes.js"></script>
+  <script type="module" src="../js/pages/perfil.js"></script>
+</body>
+</html>

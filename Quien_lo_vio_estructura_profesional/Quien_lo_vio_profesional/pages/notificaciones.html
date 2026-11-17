@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notificaciones | ¿Quién lo vio?</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+
+<body class="app-shell">
+
+    <div id="sidebar-container"></div>
+
+    <div class="main">
+
+        <header class="topbar">
+
+            <input
+                type="search"
+                placeholder="Buscar notificaciones..."
+            >
+
+            <a class="avatar small" href="perfil.html">👤</a>
+
+            <span id="contador-notificaciones" hidden>0</span>
+
+        </header>
+
+        <main>
+
+            <section class="hero" style="padding: 2rem 0;">
+
+                <div>
+                    <p class="eyebrow">AVISOS DE TU CUENTA</p>
+
+                    <h1>Notificaciones</h1>
+
+                    <h2>Consulta tus mensajes y avisos.</h2>
+                </div>
+
+            </section>
+
+            <section class="card" id="lista-notificaciones">
+            </section>
+
+            <p id="notificaciones-vacias" hidden>
+                No tienes notificaciones todavía.
+                Aquí aparecerán tus mensajes y avisos.
+            </p>
+
+        </main>
+
+    </div>
+
+    <script type="module" src="../js/componentes.js"></script>
+    <script type="module" src="../js/pages/notificaciones.js"></script>
+
+</body>
+</html>

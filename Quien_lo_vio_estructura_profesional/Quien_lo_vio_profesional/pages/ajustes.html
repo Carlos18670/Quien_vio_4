@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ajustes | ¿Quién lo vio?</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+
+<body class="app-shell">
+
+    <!-- MENÚ LATERAL -->
+    <div id="sidebar-container"></div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main">
+
+        <header class="topbar">
+            <input
+                type="search"
+                placeholder="Buscar por tipo de objeto, marca o lugar..."
+            >
+
+            <a class="avatar small" href="perfil.html">👤</a>
+        </header>
+
+        <main>
+
+            <!-- ENCABEZADO -->
+            <section class="hero" style="padding: 2rem 0;">
+                <div>
+                    <p class="eyebrow">CONFIGURACIÓN DEL SISTEMA</p>
+                    <h1>Ajustes</h1>
+                    <h2>Personaliza tus preferencias y cuenta.</h2>
+                </div>
+            </section>
+
+            <!-- NOTIFICACIONES -->
+            <div class="card ajustes-card">
+
+                <h3>Preferencias de notificaciones</h3>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        id="alertas-coincidencias"
+                    >
+                    Recibir alertas de objetos coincidentes
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        id="notificaciones-correo"
+                    >
+                    Notificaciones por correo electrónico
+                </label>
+
+                <p id="mensaje-ajustes"></p>
+
+            </div>
+
+            <!-- APARIENCIA -->
+            <div class="card ajustes-card">
+
+                <h3>Apariencia</h3>
+
+                <label>
+                    <input type="checkbox" disabled>
+                    Activar modo oscuro (Próximamente)
+                </label>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script type="module" src="../js/componentes.js"></script>
+    <script type="module" src="../js/pages/ajustes.js"></script>
+
+</body>
+</html>

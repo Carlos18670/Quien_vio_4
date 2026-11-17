@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>¿Quién lo vio? - Iniciar Sesión</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+
+<body class="auth-sliding-body">
+
+    <div class="sliding-container" id="container">
+
+        <!-- Formulario de Iniciar Sesión -->
+        <div class="sliding-form-container sign-in-container">
+
+            <form id="form-login">
+
+                <h1>Iniciar Sesión</h1>
+                <br>
+
+                <input
+                    type="text"
+                    id="login-identificador"
+                    placeholder="Correo electrónico o nombre de usuario"
+                    required
+                />
+
+                <br>
+
+                <input
+                    type="password"
+                    id="login-password"
+                    placeholder="Contraseña"
+                    required
+                />
+
+                <br>
+
+                <a href="#" class="forgot-link">
+                    ¿Olvidaste tu contraseña?
+                </a>
+
+                <br>
+
+                <button
+                    type="submit"
+                    class="btn primary full"
+                    style="margin-top: 15px;"
+                >
+                    Ingresar
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Panel Deslizante -->
+        <div class="overlay-container">
+
+            <div class="overlay">
+
+                <!-- Panel izquierdo -->
+                <div class="overlay-panel overlay-left">
+
+                    <h1 style="font: 800 24px Manrope, sans-serif; color: #fff; margin-bottom: 10px;">
+                        ¡Bienvenido de nuevo!
+                    </h1>
+
+                    <p style="font-size: 13px; line-height: 1.5; color: rgba(255, 255, 255, 0.9); margin-bottom: 20px;">
+                        Ingresa tus datos para acceder a la plataforma.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn ghost"
+                        id="signIn"
+                        onclick="window.location.href='login.html'"
+                    >
+                        Iniciar Sesión
+                    </button>
+
+                </div>
+
+                <!-- Panel derecho -->
+                <div class="overlay-panel overlay-right">
+
+                    <h1 style="font: 800 24px Manrope, sans-serif; color: #fff; margin-bottom: 10px;">
+                        ¡Hola, Amigo!
+                    </h1>
+
+                    <p style="font-size: 13px; line-height: 1.5; color: rgba(255, 255, 255, 0.9); margin-bottom: 20px;">
+                        Ingresa tus datos para formar parte de ¿Quién lo vio?
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn ghost"
+                        id="signUp"
+                        onclick="window.location.href='registro.html'"
+                    >
+                        Registrarse
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript del inicio de sesión -->
+    <script type="module" src="../js/pages/login.js"></script>
+
+</body>
+</html>

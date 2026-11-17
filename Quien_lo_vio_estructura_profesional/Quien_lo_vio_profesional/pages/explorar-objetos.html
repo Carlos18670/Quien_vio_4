@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar objetos | ¿Quién lo vio?</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+
+<body class="app-shell">
+
+    <!-- MENÚ LATERAL -->
+    <div id="sidebar-container"></div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main">
+
+        <!-- BARRA SUPERIOR -->
+        <header class="topbar">
+
+            <input
+                type="search"
+                id="buscar-objetos"
+                placeholder="Buscar por nombre, marca, color o lugar..."
+            >
+
+            <a class="avatar small" href="perfil.html">👤</a>
+
+        </header>
+
+        <main>
+
+            <!-- ENCABEZADO -->
+            <div class="page-heading">
+
+                <p class="eyebrow">ENCUENTRA LO QUE BUSCAS</p>
+
+                <h1>Explorar objetos</h1>
+
+                <p>
+                    Consulta los objetos perdidos y encontrados
+                    publicados por nuestra comunidad.
+                </p>
+
+            </div>
+
+            <!-- FILTROS -->
+            <section class="toolbar">
+
+                <!-- FILTRAR POR TIPO -->
+                <select id="tipo-objeto">
+
+                    <option value="todos">Todos los objetos</option>
+
+                    <option value="perdidos">Objetos perdidos</option>
+
+                    <option value="encontrados">Objetos encontrados</option>
+
+                </select>
+
+                <!-- CATEGORÍAS CARGADAS DESDE SUPABASE -->
+                <select id="categoria-objeto">
+
+                    <option value="todas">Todas las categorías</option>
+
+                </select>
+
+            </section>
+
+            <!-- RESULTADOS -->
+            <section id="resultados-objetos">
+
+                <p>Cargando objetos...</p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script type="module" src="../js/componentes.js"></script>
+
+    <script type="module" src="../js/pages/explorar-objetos.js"></script>
+
+</body>
+
+</html>

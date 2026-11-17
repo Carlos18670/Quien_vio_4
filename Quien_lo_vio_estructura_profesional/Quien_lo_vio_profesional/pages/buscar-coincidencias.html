@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscar coincidencias | ¿Quién lo vio?</title>
+  <link rel="stylesheet" href="../css/global.css">
+</head>
+<body class="app-shell">
+
+  <!-- Componente centralizado del menú lateral -->
+  <div id="sidebar-container"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <input placeholder="Buscar por tipo de objeto, marca o lugar...">
+      <a class="avatar small" href="perfil.html">👤</a>
+    </header>
+
+    <main>
+      <div class="page-heading">
+        <p class="eyebrow">ENCUENTRA LO QUE BUSCAS</p>
+        <h1>Posibles coincidencias</h1>
+        <p>Busca por tipo de objeto, color, marca o lugar.</p>
+      </div>
+
+      <div class="toolbar">
+        <input id="search" placeholder="Ej. celular negro, llaves, biblioteca">
+        <select>
+          <option value="Todos">Todas las coincidencias</option>
+          <option value="Alta">Coincidencia alta</option>
+          <option value="Media">Coincidencia media</option>
+        </select>
+        <button class="btn primary">Buscar</button>
+      </div>
+
+      <div class="empty">
+        <p>Los resultados aparecerán aquí.</p>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="../js/componentes.js"></script>
+  <script type="module" src="../js/pages/buscar-coincidencias.js"></script>
+</body>
+</html>

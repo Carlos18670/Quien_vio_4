@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificación de propiedad | ¿Quién lo vio?</title>
+  <link rel="stylesheet" href="../css/global.css">
+</head>
+<body class="app-shell">
+
+  <!-- Componente centralizado del menú lateral -->
+  <div id="sidebar-container"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <input placeholder="Buscar por tipo de objeto, marca o lugar...">
+      <a class="avatar small" href="perfil.html">👤</a>
+    </header>
+
+    <main>
+      <div class="page-heading">
+        <p class="eyebrow">PROCESO DE DEVOLUCIÓN</p>
+        <h1>Verificación de propiedad</h1>
+        <p>Antes de devolver un objeto, debemos confirmar que pertenece a quien lo reclama.</p>
+      </div>
+
+      <div class="privacy">
+        <b>🔒 Tu privacidad es importante</b>
+        <p>La información adicional no será visible públicamente.</p>
+      </div>
+
+      <form class="panel">
+        <label>Reporte que deseas reclamar
+          <input required placeholder="Código o nombre del reporte">
+        </label>
+        <label>Describe una característica que no aparece públicamente
+          <textarea rows="5" required></textarea>
+        </label>
+        <label>Correo de contacto
+          <input type="email" required>
+        </label>
+        <button class="btn primary full">Solicitar devolución</button>
+      </form>
+    </main>
+  </div>
+
+  <script type="module" src="../js/componentes.js"></script>
+  <script type="module" src="../js/pages/verificacion.js"></script>
+</body>
+</html>

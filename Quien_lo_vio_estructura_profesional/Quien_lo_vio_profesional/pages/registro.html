@@ -1,0 +1,59 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+
+<body class="auth-sliding-body">
+<form id="form-registro" class="registro-form">
+
+    <h1>Crear Cuenta</h1>
+
+    <span>Registra tus datos para unirte</span>
+<input
+    type="text"
+    id="reg-nombre"
+    placeholder="Nombre completo"
+    required
+>
+    <input
+    type="text"
+    id="reg-usuario"
+    placeholder="Nombre de usuario"
+    required
+>
+
+<input
+    type="email"
+    id="reg-correo"
+    placeholder="Correo electrónico"
+    required
+>
+
+<div class="campo-password">
+    <input type="password" id="reg-password" placeholder="Contraseña" required>
+    <button type="button" onclick="mostrarPassword('reg-password', this)">Ver</button>
+</div>
+
+<div class="campo-password">
+    <input type="password" id="reg-confirm-password" placeholder="Confirmar contraseña" required>
+    <button type="button" onclick="mostrarPassword('reg-confirm-password', this)">Ver</button>
+</div>
+<small id="mensaje-password" class="mensaje-password"></small>
+
+    <button type="submit" class="btn-registro">
+        Registrarse
+    </button>
+
+    <a href="login.html" class="volver-login">
+        ¿Ya tienes cuenta? Inicia sesión
+    </a>
+
+</form>
+<script type="module" src="../js/pages/registro.js"></script>
+</body>
+
+</html>
